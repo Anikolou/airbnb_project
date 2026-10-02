@@ -1,0 +1,77 @@
+.place-description-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* Η απόσταση μεταξύ των ενοτήτων (ανάμεσα στα ζιγκ-ζαγκ) */
+}
+
+/* Κάθε γραμμή έχει την εικόνα και το κείμενο δίπλα-δίπλα */
+.description-row {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* Η απόσταση μεταξύ εικόνας και κειμένου */
+}
+
+/* Η μαγεία του ζιγκ-ζαγκ: Γυρίζει τη σειρά! */
+.description-row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Τα κουτιά (wrapper) για την εικόνα και το κείμενο */
+.description-image-wrapper,
+.description-text-wrapper {
+  flex: 1; /* Πιάνουν ίσο χώρο το καθένα (50%-50%) */
+  width: 100%;
+}
+
+.description-image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px; 
+}
+
+/* Στυλ για τα γράμματα - Ίδια λογική με τα attractions σου */
+.description-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.desc-subtitle {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.desc-title {
+  font-size: 32px;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+.desc-paragraph {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  white-space: pre-line; /* Επιτρέπει να βάζεις Enter στο κείμενο και να περνάει στην οθόνη */
+}
+
+/* Responsive - Για κινητά (stack elements) */
+@media (max-width: 992px) {
+  .description-row,
+  .description-row.reverse {
+    flex-direction: column; /* Στα κινητά μπαίνει ΠΑΝΤΑ η εικόνα πάνω, το κείμενο κάτω */
+    gap: 40px;
+  }
+  
+  .place-description-container {
+    gap: 80px;
+    padding: 60px 5%;
+  }
+}

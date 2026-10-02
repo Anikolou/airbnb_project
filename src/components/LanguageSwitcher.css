@@ -1,0 +1,58 @@
+.language-switch-container {
+  position: relative;
+  width: 72px; /* Το κάναμε ελάχιστα πιο φαρδύ για τα γράμματα */
+  height: 34px;
+  background-color: #e4e4e7;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px; /* Αλλάζουμε το padding έτσι ώστε να μην κολλάνε τα γράμματα στις άκρες */
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  border: 1px solid #d4d4d8;
+  box-sizing: border-box; /* Κλειδί: Κρατάει το συνολικό πλάτος αυστηρά στα 72px */
+}
+
+.language-switch-container:hover {
+  background-color: #d4d4d8;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 2px; /* Ελάχιστη διόρθωση στο ύψος */
+  left: 2px;
+  width: 28px;
+  height: 28px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+  z-index: 1;
+}
+
+/* Ο μαθηματικός υπολογισμός της απόστασης */
+.switch-thumb.en-active {
+  /* Συνολικό πλάτος(70 καθαρό) - Πλάτος Thumb(28) - Αριστερό κενό(2) = 40. 
+     Οπότε μετακινείται 38px για να αφήσει 2px συμμετρικό κενό δεξιά. */
+  transform: translateX(38px);
+}
+
+/* Το styling για τα γράμματα (GR / EN) */
+.flag-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  z-index: 2;
+  user-select: none;
+  pointer-events: none;
+  transition: color 0.3s ease;
+  margin: 0; /* Αποτρέπουμε τυχόν default margins */
+}

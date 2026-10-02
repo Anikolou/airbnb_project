@@ -1,0 +1,187 @@
+/* Βασικός Container Σελίδας */
+.destination-details-page {
+  min-height: 100vh;
+  background-color: #fafafa;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  padding-bottom: 4rem;
+}
+
+/* Hero Section (Επικεφαλίδα) */
+.destination-hero {
+  /* Αυξάνουμε πολύ το πάνω padding για να μην το κρύβει το Header 
+     και το κάτω padding για να του δώσουμε ύψος */
+  padding: 10rem 2rem 7rem 2rem; 
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 45vh; /* Διασφαλίζει ότι η εικόνα θα έχει πάντα αρκετό ύψος */
+}
+
+.destination-hero h1 {
+  font-size: 3.5rem;
+  margin: 0 0 1rem 0; /* Προσθέτουμε λίγο κενό κάτω από τον τίτλο */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Βοηθάει στην αναγνωσιμότητα */
+}
+
+.destination-hero .subtitle {
+  font-size: 1.2rem;
+  color: #d4af37; 
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Κυρίως Περιεχόμενο (Το λευκό κουτί) */
+.destination-content {
+  max-width: 800px;
+  /* Αυξάνουμε ελαφρώς το πόσο "πατάει" πάνω στην εικόνα (-4rem) 
+     και δίνουμε περιθώριο στο κάτω μέρος της σελίδας (3rem) */
+  margin: -4rem auto 3rem; 
+  background: #fff;
+  padding: 3.5rem 4rem;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 10;
+}
+
+/* Περιγραφή */
+.full-description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 3rem;
+  text-align: justify;
+}
+
+/* Τοπικός Οδηγός (Εστιατόρια, Παραλίες κλπ)*/
+.local-guide {
+  margin-top: 3rem;
+  border-top: 1px solid #eee;
+  padding-top: 2rem;
+}
+
+.category-section {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
+
+/* Πλέγμα για τις κάρτες */
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Σχεδιασμός της κάθε κάρτας */
+.place-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #d4af37; /* Η χρυσή λεπτομέρεια */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.place-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #111;
+  font-size: 1.1rem;
+}
+
+.place-card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Κουμπί Επιστροφής */
+.actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: #f4f4f4;
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+}
+
+.back-btn:hover {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+  /* Styling για το link της κάθε κάρτας (Website ↗) */
+.place-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d4af37; /* Το χρυσό σου χρώμα */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.place-link:hover {
+  color: #111; /* Σκουραίνει στο hover */
+  transform: translateX(3px); /* Κάνει μια μικρή κίνηση προς τα δεξιά */
+}
+
+@media (max-width: 768px) {
+  .destination-hero {
+    /* ΑΥΞΗΣΗ: Το 8rem (ή και 9rem αν χρειαστεί) σπρώχνει τον τίτλο πιο κάτω από το Header */
+    padding: 8rem 1.5rem 6rem 1.5rem; 
+    min-height: 40vh;
+  }
+
+  .destination-hero h1 {
+    font-size: 2.2rem; /* Ελαφρώς μικρότερο για να μην σπάει άσχημα η λέξη */
+  }
+
+  .destination-hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .destination-content {
+    /* Μειώνουμε το πόσο "καβαλάει" την εικόνα στο κινητό για να μην κρύβει τον υπότιτλο */
+    margin: -2.5rem 1rem 0; 
+    padding: 2rem 1.5rem;
+  }
+
+  .full-description {
+    font-size: 1rem;
+    text-align: left; /* Καλύτερη αναγνωσιμότητα στο κινητό */
+  }
+}

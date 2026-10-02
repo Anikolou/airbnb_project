@@ -1,0 +1,154 @@
+.attractions-container {
+  background-color: #ffffff;
+  padding: 180px 5% 150px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+  color: #1a1a1a; /* Σχεδόν μαύρο */
+}
+
+/* Header Section */
+.attractions-header {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.attractions-header .subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.attractions-header .main-title {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+/* Attraction Cards Layout */
+.attractions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 150px; /* Μεγάλο κενό μεταξύ των attractions για αέρα περιοδικού */
+}
+
+.attraction-card {
+  display: flex;
+  align-items: center;
+  gap: 8%;
+}
+
+.attraction-card.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image Styling */
+.image-wrapper {
+  flex: 1.2;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 600px; /* Σταθερό ύψος για ομοιομορφία */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Content Styling */
+.content-wrapper {
+  flex: 1;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Ευθυγραμμίζει τα πάντα αριστερά */
+}
+
+.meta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-title {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 40px;
+  font-weight: 300;
+  max-width: 450px;
+}
+
+.attraction-link {
+  display: block;          /* ΑΛΛΑΓΗ ΕΔΩ: από inline-block σε block */
+  width: fit-content;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4d4d4c; /* Το χρυσό της Ριβιέρας */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.attraction-link:hover {
+  color: #c0a798;
+  transform: translateX(5px); /* Μικρή κίνηση προς τα δεξιά */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .attraction-card {
+    gap: 40px;
+  }
+  .image-wrapper img {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .attractions-container{
+    padding: 120px 5% 100px 5%;
+  }
+  .attraction-card, .attraction-card.reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .attractions-list {
+    gap: 80px;
+  }
+  .image-wrapper img {
+    height: 400px;
+  }
+  .content-wrapper {
+    text-align: center;
+  }
+  .description {
+    margin: 0 auto 30px auto;
+  }
+  .meta {
+    justify-content: center;
+  }
+}

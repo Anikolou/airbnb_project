@@ -1,0 +1,156 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff; /* Λευκό φόντο όπως στο PC screenshot */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 100;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ομαλή μετάβαση για το background-color και το transform */
+  min-height: 120px; /*Προσαρμογη του navbar για να χωράει ολοόκληρο το logo στο header component */
+}
+
+/*Όταν το navbat κρύβεται μπαίνει στην κλάση hidden και κρύβεται */
+.navbar.hidden{
+  transform: translateY(-100%);
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo:hover{
+  transform: translateX(-50%) scale(1.25);
+  transition: transform 0.3s ease;
+}
+
+.line {
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+}
+
+.logo h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.book-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.book-btn:hover {
+  background-color: #c0a798;
+}
+
+.custom-logo {
+  height: 150px; /* Προσάρμοσε αυτό το νούμερο ανάλογα με το πόσο μεγάλο θες το logo */
+  width: auto; /* Διατηρεί τις σωστές αναλογίες της εικόνας */
+  display: block; /* Αποτρέπει κενά κάτω από την εικόνα */
+}
+
+/*ANIMATION ΓΙΑ ΤΟ HAMBURGER ICON (Γίνεται "X")*/
+.menu-icon {
+  z-index: 1000; /* Πρέπει να είναι πάντα πάνω από το μενού για να μπορούμε να το κλείσουμε */
+  position: relative;
+}
+
+.menu-icon .line {
+  transition: all 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+/* Όταν το μενού ανοίγει, η 1η γραμμή γέρνει */
+.menu-icon.open .line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+/* Όταν το μενού ανοίγει, η 2η γραμμή γέρνει ανάποδα σχηματίζοντας Χ */
+.menu-icon.open .line:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+
+/* FULLSCREEN POP-UP MENU */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Το μενού ξεκινάει κρυμμένο έξω από την οθόνη, αριστερά */
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.97); /* Λευκό με ελάχιστη διαφάνεια */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0); /* Απαλό κινηματογραφικό slide */
+  z-index: 99; /* Κάτω από το navbar, αλλά πάνω από την υπόλοιπη σελίδα */
+}
+
+/* Όταν προστίθεται η κλάση active, το μενού έρχεται στη θέση 0 (μέσα στην οθόνη) */
+.fullscreen-menu.active {
+  left: 0; 
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem; /* Μεγάλο κενό ανάμεσα στα links για premium αέρα */
+}
+
+.menu-links a {
+  font-family: 'Playfair Display', serif; /* Ίδια γραμματοσειρά με τους τίτλους */
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-links a:hover {
+  color: #888888; /* Γίνεται γκρι όταν περνάει το ποντίκι */
+}
+
+.header-actions{
+  display: flex;
+  flex-direction: row; /* Τα βάζει αναγκαστικά δίπλα-δίπλα */
+  align-items: center; /* Τα κεντράρει κάθετα ώστε να είναι στην ίδια ευθεία */
+  gap: 15px; /* Η απόσταση μεταξύ του διακόπτη και του Book */
+}
+
+/* Προσαρμογή μεγέθους για κινητά */
+@media (max-width: 768px) {
+  .header-actions{
+    flex-direction: column; /* Τα βάζει το ένα πάνω από το άλλο */
+    align-items: center; /* Τα κεντράρει οριζόντια */
+    gap: 8px; /*μειώνουμε το κενό μεταξύ των στοιχείων για κινητά*/
+  }
+  .menu-links a {
+    font-size: 1.8rem;
+  }
+
+  .custom-logo{
+    height: 90px;
+  }
+}

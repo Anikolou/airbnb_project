@@ -1,0 +1,218 @@
+.gallery-container {
+  background-color: #ffffff;
+  padding: 120px 5% 100px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Styling (Ίδιο ύφος με τα Attractions) */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.gallery-subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #888;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.gallery-title {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+}
+
+/* Το Πλέγμα των Φωτογραφιών (Τώρα με Flexbox) */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /*Κεντράρει τα "ορφανά" στοιχεία της τελευταίας σειράς! */
+  gap: 25px; /* Το κενό μεταξύ των φωτογραφιών */
+}
+
+/* Κάθε φωτογραφία */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 4 / 3;
+  background-color: #f4f4f4;
+  cursor: pointer;
+  
+  /* Υπολογίζουμε το πλάτος ώστε να χωράνε ιδανικά 4 ανά σειρά σε μεγάλες οθόνες.
+     Αν μικρύνει η οθόνη, το min-width εξασφαλίζει ότι θα πέσουν στην επόμενη σειρά. */
+  flex: 0 1 calc(25% - 20px); 
+  min-width: 280px; /* Ελάχιστο πλάτος πριν "σπάσει" η γραμμή */
+}
+
+/* Κάθε φωτογραφία */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  aspect-ratio: 4 / 3; /* Κρατάει όλες τις φωτογραφίες στις ίδιες αναλογίες (οριζόντιες) */
+  background-color: #f4f4f4; /* Σε περίπτωση που αργήσει να φορτώσει η εικόνα */
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Hover effect */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Ελαφρύ ζουμ για premium αίσθηση */
+}
+
+/*Κουμπιά πλοήγησης για τα Lighboxes με τις εναλλαγες των φωτογραφιών */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border: none;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Κυκλικά κουμπιά */
+  cursor: pointer;
+  z-index: 10000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+  color: #cda873; /* Ίδιο χρυσό με το κουμπί κλεισίματος */
+}
+
+/* Τοποθέτηση αριστερά και δεξιά */
+.nav-button.left {
+  left: 30px;
+}
+
+.nav-button.right {
+  right: 30px;
+}
+
+  /* Η Λεζάντα πάνω στη φωτογραφία */
+.gallery-caption {
+  position: absolute;
+  bottom: 15px;      /* Απόσταση από κάτω */
+  right: 15px;       /* Απόσταση από δεξιά */
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 2;        /* Βεβαιώνει ότι φαίνεται πάνω από την εικόνα */
+  pointer-events: none; /* Δεν εμποδίζει το κλικ/hover της εικόνας */
+  
+  /* ΣΗΜΑΝΤΙΚΟ: Βάζουμε μια ελαφριά σκιά στο κείμενο 
+     ώστε να διαβάζεται τέλεια ακόμα κι αν η φωτογραφία 
+     από πίσω είναι πολύ φωτεινή/άσπρη */
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Το μαύρο φόντο που πιάνει όλη την οθόνη */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85); /* Σκούρο διαφανές φόντο */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Πολύ μεγάλο νούμερο για να μπει ΠΑΝΩ από το Header */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Το "κουτί" που κρατάει τη μεγάλη εικόνα */
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Η ίδια η μεγάλη εικόνα */
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh; /* Να μην ξεφύγει σε ύψος */
+  object-fit: contain; /* Κρατάει τις σωστές αναλογίες χωρίς να κόβεται */
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Το κουμπί X πάνω δεξιά */
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  color: #cda873; /* Χρυσό χρώμα στο hover */
+}
+
+/* Η λεζάντα κάτω από τη μεγάλη εικόνα */
+.lightbox-text {
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Responsive για μικρά κινητά */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 100px 5% 60px 5%;
+  }
+  .gallery-grid {
+    gap: 15px;
+    grid-template-columns: 1fr; /* Μία φωτογραφία ανά σειρά */
+  }
+  .gallery-item {
+    aspect-ratio: auto; /* Επιτρέπει στη φωτογραφία να δείξει το δικό της ύψος */
+    height: 300px; /* Σταθερό ύψος στα κινητά */
+  }
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .nav-button.left {
+    left: 10px;
+  }
+  .nav-button.right {
+    right: 10px;
+  }
+
+}
+
