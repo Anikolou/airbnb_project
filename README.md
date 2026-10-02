@@ -8,7 +8,7 @@ Live Demo
 
 View Live Site
 
-You can find it here for preview [vercel](https://airbnb-project-xi-flax.vercel.app/)
+You can find it here for preview at [vercel](https://airbnb-project-xi-flax.vercel.app/)
 
 Preview
 
