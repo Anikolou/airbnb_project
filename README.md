@@ -35,20 +35,7 @@ DevOps Ready: The project includes a Dockerfile and docker-compose.yml, ensuring
 
 Project Structure
 
-.
-├── src/
-│   ├── assets/       # Static files (images, icons, etc.)
-│   ├── components/   # Reusable UI components (Buttons, Cards, Navbar, etc.)
-│   ├── context/      # React Context (e.g., LanguageContext for i18n)
-│   ├── data/         # Data layer: JS objects acting as static local databases
-│   ├── pages/        # Main route components/views of the application
-│   ├── App.jsx       # Root component and application layout
-│   └── main.jsx      # React entry point
-├── .env              # Environment variables
-├── docker-compose.yml# Docker Compose configuration for multi-container orchestration
-├── dockerfile        # Docker image configuration for the React app
-├── vite.config.js    # Vite bundler configuration
-└── package.json      # Project dependencies and scripts
+![structure](./src/assets/Structure.png)
 
 
 
