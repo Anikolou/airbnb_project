@@ -1,18 +1,13 @@
-import React from 'react';
+
 import './Attractions.css';
 import { useLanguage } from '../context/LanguageContext';
 import { attractionsData } from '../data/attractionsData';
 
-
-// Στο πάνω μέρος του Attractions.jsx ή σε ξεχωριστό αρχείο δεδομένων
-
-
-
 const Attractions = () => {
 
-  const { language } = useLanguage(); //Τραβαμε την τρεχουσα γλωσσα
+  const { language } = useLanguage(); //Get the current language from the context
 
-  //Το κείμενο των headers αναλόγα την γλώσσα
+  //The text for the headers based on the language
   const headerTexts = {
     el: { subtitle: "Εξερευνήστε", title: "ΑΞΙΟΘΕΑΤΑ & ΕΜΠΕΙΡΙΕΣ", linkText: "Επίσημη Ιστοσελίδα ↗" },
     en: { subtitle: "Explore", title: "ATTRACTIONS & EXPERIENCES", linkText: "Official Website ↗" }
@@ -46,7 +41,7 @@ const Attractions = () => {
               <p className="description">{content.description}</p>
             
 
-            {/*Εμφανίζεται μόνο αν υπάρχει attraction.url */}
+            {/*Show ONLY IF IT EXISTS: attraction.url */}
               {attraction.url && (
                 <a 
                   href={attraction.url} 

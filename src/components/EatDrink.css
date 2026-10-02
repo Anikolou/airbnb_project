@@ -78,7 +78,7 @@
 }
 
 .lifestyle-card .card-title {
-  font-size: 36px; /* Λίγο μεγαλύτερο font από τα attractions για πιο lifestyle ύφος */
+  font-size: 36px; /* Slightly larger font than attractions for a more lifestyle feel */
   font-weight: 300;
   margin-bottom: 25px;
   letter-spacing: 1px;
@@ -92,12 +92,12 @@
   max-width: 450px;
 }
 
-/* Styling για το κουμπί */
+/* Styling for the button */
 .explore-btn {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
-  background-color: #222; /* Σκούρο χρώμα για elegance */
+  background-color: #222; /* Dark for elegance */
   color: #fff;
   text-decoration: none;
   font-weight: 500;

@@ -7,7 +7,7 @@ const Footer = () => {
   const { language } = useLanguage();
 
   // Coordinats for the Google maps API marker
-  const position = { lat: 37.815258, lng: 23.846234 };
+  const position = { lat: 37.723235, lng: 23.915459 };
 
   // Dictionary for the footer texts data in both languages.
   const footerTexts = {

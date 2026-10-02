@@ -9,23 +9,23 @@ const Header = () => {
   const { language } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Νέες καταστάσεις για την εμφάνιση/απόκρυψη του Header κατά το scroll
+  // States for controlling the visibility of the header based on scroll direction
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  //Παρακολούθηση του scroll για να εμφανίζεται/αποκρύπτεται το Header
+  //Watch scroll for showing/hiding the Header
   useEffect(() => {
     const handleScroll = () => {
-      // Αν το μενού είναι ανοιχτό, μην κρύβεις το header
+      // If the menu is on do not close the menu
       if (isMenuOpen) return; 
 
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Σκρολάρισμα προς τα κάτω (και αφού έχουμε κατέβει λίγο)
+        // Scrolling down (even after having scroled 50px from the top)
         setIsVisible(false);
       } else {
-        // Σκρολάρισμα προς τα πάνω
+        // Scrolling up or near the top of the page
         setIsVisible(true);
       }
 
