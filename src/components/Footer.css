@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: #c0a798; /* Σκούρο, premium γκρι/μαύρο */
+  background-color: #c0a798; /* Dark, premium gray/black */
   color: white;
   padding: 4rem 2rem; /* pt-5 pb-5 */
   margin-top: 0; /* mt-5 */
@@ -7,16 +7,16 @@
 }
 
 .footer-inner {
-  max-width: 1200px; /* Κρατάει το περιεχόμενο στο κέντρο (σαν το .container) */
+  max-width: 1200px; /* Keeps the content centered (like the .container) */
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap; /* Για να σπάει σωστά στα κινητά */
+  flex-wrap: wrap; /* For it to wrap correctly on mobile devices */
   align-items: center;
   gap: 2rem;
 }
 
 .footer-info {
-  flex: 1; /* Πιάνει τον μισό χώρο (σαν το col-md-6) */
+  flex: 1; /* Takes half the space (like col-md-6) */
   min-width: 300px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .footer-map-col {
-  flex: 1; /* Πιάνει τον άλλο μισό χώρο (σαν το col-md-6) */
+  flex: 1; /* Takes the other half of the space (like col-md-6) */
   min-width: 300px;
 }
 

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 const LightboxModal = ({ room, photoIndex, setPhotoIndex, language, onClose }) => {
   if (!room) return null;
 
-  // Ο πίνακας με τις φωτογραφίες του συγκεκριμένου χώρου
+  // The array of photos of every room is stored in the images property of the room object.
   const photos = room.images; 
 
   const goToPrev = (e) => {
@@ -30,7 +30,7 @@ const LightboxModal = ({ room, photoIndex, setPhotoIndex, language, onClose }) =
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [photoIndex, photos.length]);
 
-  // Αν το δωμάτιο έχει μόνο 1 φωτογραφία, δεν χρειάζεται να δείξουμε βελάκια
+  // If the room has only one photo we do not to show any navigation buttons or photo count
   const hasMultiplePhotos = photos.length > 1;
 
   return (
@@ -43,12 +43,12 @@ const LightboxModal = ({ room, photoIndex, setPhotoIndex, language, onClose }) =
       )}
 
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-        {/* Εμφανίζουμε τη φωτογραφία με βάση το τρέχον photoIndex */}
+        {/* Choose which photo is being shown based on the photoIndex */}
         <img src={photos[photoIndex]} alt={room[language].caption} />
         
         <div className="lightbox-text">
           {room[language].caption} 
-          {/* Προαιρετικό: Δείχνουμε τον αριθμό π.χ. (1 / 3) */}
+          {/* Show the number as well e.g. (1 / 3) */}
           {hasMultiplePhotos && ` (${photoIndex + 1} / ${photos.length})`}
         </div>
       </div>

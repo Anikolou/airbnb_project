@@ -9,7 +9,7 @@ const DestinationDetailsPage = () => {
   const destination = destinationsData[slug];
   const { language } = useLanguage();
 
-  //  Αντικείμενο για τα σταθερά (UI) κείμενα της σελίδας
+  //  Object for the stable (UI) texts that don't change with the destination data, but do change with the language
   const uiTexts = {
     el: {
       errorMsg: "Ο προορισμός δεν βρέθηκε!",
@@ -42,7 +42,7 @@ const DestinationDetailsPage = () => {
     );
   }
 
-  // ΝΕΟ: Αποθηκεύουμε τα δεδομένα της τρέχουσας γλώσσας για πιο καθαρό κώδικα
+  // Save the current language data for easier access
   const currentData = destination[language];
 
   const renderCategory = (title, items, icon) => {
@@ -57,7 +57,7 @@ const DestinationDetailsPage = () => {
               <h4>{item.name}</h4>
               <p>{item.desc}</p>
               
-              {/* Ελέγχουμε αν υπάρχει url και εμφανίζουμε το link */}
+              {/* Check if url exists and display the link */}
               {item.url && (
                 <a 
                   href={item.url} 
@@ -81,13 +81,13 @@ const DestinationDetailsPage = () => {
       <header 
         className="destination-hero"
         style={{
-          // Η εικόνα είναι κοινή, άρα την τραβάμε απευθείας από το destination
+          // The image is common, so we fetch it directly from the destination
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url(${destination.heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
-        {/* Χρησιμοποιούμε το currentData για τα δυναμικά μεταφρασμένα κείμενα */}
+        {/* Use currentData for the dynamic translated texts */}
         <h1>{currentData.title}</h1>
         <p className="subtitle">{currentData.subtitle}</p>
       </header>
@@ -95,7 +95,7 @@ const DestinationDetailsPage = () => {
       <section className="destination-content">
         <p className="full-description">{currentData.fullDescription}</p>
         
-        {/* Καλούμε τη συνάρτηση με τους δυναμικούς τίτλους κατηγοριών από το uiTexts */}
+        {/* Call the function with the dynamic category titles from uiTexts */}
         <div className="local-guide">
           {renderCategory(ui.restaurants, currentData.restaurants)}
           {renderCategory(ui.beaches, currentData.beaches)}

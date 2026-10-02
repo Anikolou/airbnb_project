@@ -12,10 +12,10 @@ const LanguageSwitcher = () => {
       role="button"
       aria-label="Toggle Language"
     >
-      {/* Το κινούμενο στρογγυλό κουμπί (thumb) */}
+      {/* The moving thumb */}
       <div className={`switch-thumb ${language === 'en' ? 'en-active' : ''}`}></div>
       
-      {/* Οι σημαίες */}
+      {/* The flags */}
       <span className="flag-icon gr">GR</span>
       <span className="flag-icon uk">EN</span>
     </div>

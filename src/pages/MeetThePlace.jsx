@@ -7,7 +7,7 @@ import PlaceDescription from '../components/PlaceDescription';
 const MeetThePlace = () => {
   const { language } = useLanguage();
 
-  // Κείμενα εισαγωγής για τη σελίδα
+  // Texts for the introduction section in both languages
   const texts = {
     el: {
       title: "Γνωρίστε τον Χώρο",
@@ -23,7 +23,7 @@ const MeetThePlace = () => {
     // Βάζουμε το id="meet-the-place" για να δουλεύει το link από το Header!
     <div className="meet-the-place-page" id="meet-the-place">
       
-      {/* Ενότητα Εισαγωγής */}
+      {/* Introduction Section */}
       <section style={{ textAlign: 'center', padding: '200px 5% 80px', maxWidth: '800px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '36px', marginBottom: '20px', fontWeight: '300' }}>
           {texts[language].title}
@@ -34,7 +34,7 @@ const MeetThePlace = () => {
       </section>
 
       <PlaceDescription />
-      {/* Εδώ ενσωματώνουμε το Grid με τις φωτογραφίες! */}
+      {/* Gallery Section */}
       <Gallery />
       
       

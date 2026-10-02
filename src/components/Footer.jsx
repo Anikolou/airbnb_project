@@ -31,14 +31,14 @@ const Footer = () => {
     }
   };
 
-  // Επιλογή των σωστών κειμένων με βάση τη γλώσσα
+  // Use costext API to choose the correct language option for tht efooter text.
   const text = footerTexts[language];
 
   return (
     <footer className="footer-container">
       <div className="footer-inner">
         
-        {/* Αριστερή Στήλη: Πληροφορίες */}
+        {/* Left Column is information */}
         <div className="footer-info">
           <h4 className="footer-title">{text.contactUs}</h4>
           <ul className="footer-list">
@@ -66,14 +66,14 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Δεξιά Στήλη: Google Maps */}
+        {/* Right Column: Google Maps */}
         <div className="footer-map-col" style={{ height: '300px', width: '100%', borderRadius: '4px', overflow: 'hidden' }}>
           <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
             <Map 
               defaultCenter={position} 
               defaultZoom={15} 
-              disableDefaultUI={true} /* Κρύβει τα κουμπιά για πιο clean look */
-              gestureHandling={'greedy'} /* Διευκολύνει το scroll στα κινητά */
+              disableDefaultUI={true} /* Hides the buttons for a cleaner look */
+              gestureHandling={'greedy'} /* Makes scrolling easier on mobile devices */
             >
               <Marker position={position} />
             </Map>

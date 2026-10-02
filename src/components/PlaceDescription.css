@@ -4,25 +4,25 @@
   padding: 100px 5%;
   display: flex;
   flex-direction: column;
-  gap: 120px; /* Η απόσταση μεταξύ των ενοτήτων (ανάμεσα στα ζιγκ-ζαγκ) */
+  gap: 120px; /* The distance between the sections (in between the  zig-zag) */
 }
 
-/* Κάθε γραμμή έχει την εικόνα και το κείμενο δίπλα-δίπλα */
+/* Every row has a photo and a text. The row is a flex container */
 .description-row {
   display: flex;
   align-items: center;
-  gap: 80px; /* Η απόσταση μεταξύ εικόνας και κειμένου */
+  gap: 80px; /* The distance between the image and the text */
 }
 
-/* Η μαγεία του ζιγκ-ζαγκ: Γυρίζει τη σειρά! */
+/* The zig-zag: Reverses the order */
 .description-row.reverse {
   flex-direction: row-reverse;
 }
 
-/* Τα κουτιά (wrapper) για την εικόνα και το κείμενο */
+/* The wrappers for the image and the text */
 .description-image-wrapper,
 .description-text-wrapper {
-  flex: 1; /* Πιάνουν ίσο χώρο το καθένα (50%-50%) */
+  flex: 1; /* Take equal space */
   width: 100%;
 }
 
@@ -33,7 +33,7 @@
   border-radius: 4px; 
 }
 
-/* Στυλ για τα γράμματα - Ίδια λογική με τα attractions σου */
+/* Style for the text - Same logic as the attractions */
 .description-text-wrapper {
   display: flex;
   flex-direction: column;
@@ -59,14 +59,14 @@
   font-size: 16px;
   line-height: 1.8;
   color: #555;
-  white-space: pre-line; /* Επιτρέπει να βάζεις Enter στο κείμενο και να περνάει στην οθόνη */
+  white-space: pre-line; /* Allows line breaks in the text */
 }
 
-/* Responsive - Για κινητά (stack elements) */
+/* Responsive - For mobile devices (stack elements) */
 @media (max-width: 992px) {
   .description-row,
   .description-row.reverse {
-    flex-direction: column; /* Στα κινητά μπαίνει ΠΑΝΤΑ η εικόνα πάνω, το κείμενο κάτω */
+    flex-direction: column; /* On mobile devices, the image always comes first, the text second */
     gap: 40px;
   }
   

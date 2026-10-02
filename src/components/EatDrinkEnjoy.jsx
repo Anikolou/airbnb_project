@@ -42,7 +42,6 @@ const EatDrink = () => {
               <h3 className="card-title">{item[language].title}</h3>
               <p className="description">{item[language].description}</p>
 
-              {/* Το νέο κουμπί που οδηγεί στην αναλυτική σελίδα */}
               <Link 
                 to={item.link} 
                 className="explore-btn"

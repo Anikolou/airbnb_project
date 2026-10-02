@@ -1,6 +1,6 @@
-// Αρχείο: src/data/galleryData.js
+// File: src/data/galleryData.js
 
-// Imports εικόνων
+// Imports of the images for the gallery
 import sunset_balconyWide from '../assets/sunset_balcony_wide.jpg';
 import sunset_balcony from '../assets/sunset_balcony.jpg';
 import outside from '../assets/outside.jpg';
@@ -16,7 +16,7 @@ import outside_door from '../assets/outsidedoor.jpg';
 import outside_roof from '../assets/outside_roof.jpg';
 import inside_out from '../assets/inside_out.jpg';
 
-// Κάνουμε export τον πίνακα για να μπορούμε να τον καλέσουμε από άλλα αρχεία
+// Export the gallery array for us to be able to call it in the Gallery component. Each room has an id, an array of images, and a caption in both Greek and English.
 export const galleryImages = [
     { 
       id: 1, 

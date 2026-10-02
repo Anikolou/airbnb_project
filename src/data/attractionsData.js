@@ -12,14 +12,14 @@ export const attractionsData = [
       location: "Σούνιο",
       distance: "45 λεπτά οδικώς",
       description: "Ένα από τα σημαντικότερα μνημεία της αρχαιότητας, σκαρφαλωμένο στον ιερό βράχο του Σουνίου. Απολαύστε το διασημότερο ηλιοβασίλεμα της Αθηναϊκής Ριβιέρας με θέα το Αιγαίο.",
-      url: "https://www.discovergreece.com/el/experiences/visit-magical-temple-poseidon-sounion" // Ελληνικό link
+      url: "https://www.discovergreece.com/el/experiences/visit-magical-temple-poseidon-sounion" // GR link
     },
     en: {
       title: "Temple of Poseidon",
       location: "Sounio",
       distance: "45 min drive",
       description: "One of the most important monuments of antiquity, perched on the sacred rock of Cape Sounio. Enjoy the most famous sunset of the Athenian Riviera overlooking the Aegean Sea.",
-      url: "https://www.discovergreece.com/experiences/visit-magical-temple-poseidon-sounion" // Αγγλικό link
+      url: "https://www.discovergreece.com/experiences/visit-magical-temple-poseidon-sounion" // EN link
     }
   },
   {

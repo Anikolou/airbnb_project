@@ -9,7 +9,7 @@ export const destinationsData = {
       el: {
         title: "Βουλιαγμένη",
         subtitle: "Υψηλή Γαστρονομία & Αέρας Miami",
-        fullDescription: "Η Βουλιαγμένη προσφέρει απαράμιλλη πολυτέλεια...", // Αν έχεις μεγαλύτερο κείμενο, το προσθέτεις εδώ
+        fullDescription: "Η Βουλιαγμένη προσφέρει απαράμιλλη πολυτέλεια...",
         restaurants: [
           { name: "Matsuhisa Athens", desc: "Premium sushi & cocktails με πανοραμική θέα στη θάλασσα." ,url: "https://matsuhisaathens.com/"},
           { name: "Ithaki Restaurant", desc: "Εμβληματικό εστιατόριο για φρέσκο ψάρι και fine dining." ,url: "https://ithakirestaurantbar.gr/"},

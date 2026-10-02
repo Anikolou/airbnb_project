@@ -14,7 +14,7 @@ const PlaceDescription = () => {
         return (
           <article 
             key={item.id} 
-            // Αν το index είναι μονός αριθμός (π.χ. 1, 3), παίρνει την κλάση 'reverse'
+            // if the indexs is an odd number (e.g., 1, 3), take the 'reverse' class 
             className={`description-row ${index % 2 !== 0 ? 'reverse' : ''}`}
           >
             <div className="description-image-wrapper">

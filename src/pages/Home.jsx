@@ -7,7 +7,7 @@ import bg4 from '../assets/IMG4.jpg';
 
 const backgroundImages = [bg1, bg2, bg3, bg4];
 
-//Ειναι λίγα τα data οπότε τα κάνω hard code μέσα στην συνάρτηση που επιστρέφει το component
+//Data amount is small, so we can keep it here. If it grows, we can move it to a separate file.
 const Home = () => {
   const { language } = useLanguage();
   const heroTexts = {

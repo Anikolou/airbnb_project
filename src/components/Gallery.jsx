@@ -1,29 +1,29 @@
 import React, { useState } from 'react'; 
 import { useLanguage } from '../context/LanguageContext';
 import './Gallery.css';
-import LightboxModal from './LightboxModal'; // Κάνουμε import το νέο component (βάλε το σωστό path)
+import LightboxModal from './LightboxModal'; // Import the LightboxModal component to handle the modal display of images
 import { galleryImages } from '../data/galleryData';
 
 const Gallery = () => {
   const { language } = useLanguage();
 
-  // Κρατάμε ποιο δωμάτιο (άλμπουμ) είναι ανοιχτό
+  // Keep the gallery that is open 
   const [selectedRoomIndex, setSelectedRoomIndex] = useState(null);
   
-  // Κρατάμε σε ποια φωτογραφία αυτού του δωματίου βρισκόμαστε
+  // Keep track of which photo in the room we are viewing
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const texts = { /* ... */ };
 
-  // Συνάρτηση για να ανοίγει το Modal σωστά
+  // Function that ensuers the right opening of the Modal
   const openModal = (roomIndex) => {
     setSelectedRoomIndex(roomIndex);
-    setCurrentPhotoIndex(0); // Ξεκινάμε πάντα από την 1η φωτογραφία του δωματίου (index 0)
+    setCurrentPhotoIndex(0); // We always start from the first photo of the room (index 0)
   };
 
   return (
     <section className="gallery-container">
-      {/* ... header ... */}
+      {/* header*/}
     
       <div className="gallery-grid">
         {galleryImages.map((room, index) => {
@@ -34,7 +34,7 @@ const Gallery = () => {
               className="gallery-item"
               onClick={() => openModal(index)} 
             >
-                {/* Χρησιμοποιούμε την 1η εικόνα (images[0]) ως εξώφυλλο του δωματίου */}
+                {/* We use the first image (images[0]) as the cover of the room */}
                 <img src={room.images[0]} alt={content.caption} loading="lazy" />
                 <span className="gallery-caption">{content.caption}</span>
             </div>

@@ -67,20 +67,20 @@ const Header = () => {
 
   return (
     <header className={'navbar' + (isVisible ? '' : ' hidden')}>
-      {/* Το εικονίδιο του μενού (Hamburger) */}
+      {/* Hamburger Icon */}
       <div className={`menu-icon ${isMenuOpen ? 'open' : ''}`} onClick={toggleMenu}>
         <div className="line"></div>
         <div className="line"></div>
       </div>
 
-      {/* Το Λογότυπο */}
+      {/* Logo */}
       <div className="logo">
         <Link to="/" onClick={closeMenu}>
           <img src={logoImg} alt="Marina Riviera" className="custom-logo" />
         </Link>
       </div>
     
-      {/* ΝΕΟ: Περιοχή ενεργειών (Διακόπτης Γλώσσας + Κουμπί Κράτησης) */}
+      {/* Header Actions (Language Switcher + Book Button) */}
       <div className="header-actions">
         <LanguageSwitcher />
         
@@ -89,7 +89,7 @@ const Header = () => {
         </a>
       </div>
 
-      {/* Το Pop-up Menu */}
+      {/* The Pop-up Menu */}
       <div className={`fullscreen-menu ${isMenuOpen ? 'active' : ''}`}>
         <nav className="menu-links">
           <Link to="/meet-the-place" onClick={closeMenu}>{headertext.meetThePlace}</Link>

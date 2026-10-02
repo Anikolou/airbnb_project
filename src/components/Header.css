@@ -3,17 +3,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: #ffffff; /* Λευκό φόντο όπως στο PC screenshot */
+  background-color: #ffffff; 
   position: fixed;
   top: 0;
   width: 100%;
   box-sizing: border-box;
   z-index: 100;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Ομαλή μετάβαση για το background-color και το transform */
-  min-height: 120px; /*Προσαρμογη του navbar για να χωράει ολοόκληρο το logo στο header component */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition background-color and the transform */
+  min-height: 120px; /*Make the navbar fit the whole logo at the header component */
 }
 
-/*Όταν το navbat κρύβεται μπαίνει στην κλάση hidden και κρύβεται */
+/*Hidden class makes the navbar disappear*/
 .navbar.hidden{
   transform: translateY(-100%);
 }
@@ -66,14 +66,14 @@
 }
 
 .custom-logo {
-  height: 150px; /* Προσάρμοσε αυτό το νούμερο ανάλογα με το πόσο μεγάλο θες το logo */
-  width: auto; /* Διατηρεί τις σωστές αναλογίες της εικόνας */
-  display: block; /* Αποτρέπει κενά κάτω από την εικόνα */
+  height: 150px; 
+  width: auto; 
+  display: block; /* No blank space under the logo image */
 }
 
-/*ANIMATION ΓΙΑ ΤΟ HAMBURGER ICON (Γίνεται "X")*/
+/*ANIMATION FOR THE  HAMBURGER ICON (It transforms to "X")*/
 .menu-icon {
-  z-index: 1000; /* Πρέπει να είναι πάντα πάνω από το μενού για να μπορούμε να το κλείσουμε */
+  z-index: 1000; /* Must be always on top of the menu so that it can be closed */
   position: relative;
 }
 
@@ -82,12 +82,12 @@
   transform-origin: center;
 }
 
-/* Όταν το μενού ανοίγει, η 1η γραμμή γέρνει */
+/* When the menu opens, the first line tilts up */
 .menu-icon.open .line:nth-child(1) {
   transform: translateY(4px) rotate(45deg);
 }
 
-/* Όταν το μενού ανοίγει, η 2η γραμμή γέρνει ανάποδα σχηματίζοντας Χ */
+/* When the menu opens, the second line tilts down forming an X */
 .menu-icon.open .line:nth-child(2) {
   transform: translateY(-4px) rotate(-45deg);
 }
@@ -97,18 +97,18 @@
 .fullscreen-menu {
   position: fixed;
   top: 0;
-  left: -100%; /* Το μενού ξεκινάει κρυμμένο έξω από την οθόνη, αριστερά */
+  left: -100%; /* Menu starts hidden off the screen, left */
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.97); /* Λευκό με ελάχιστη διαφάνεια */
+  background-color: rgba(255, 255, 255, 0.97); /* Blank with a bit transparency */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0); /* Απαλό κινηματογραφικό slide */
-  z-index: 99; /* Κάτω από το navbar, αλλά πάνω από την υπόλοιπη σελίδα */
+  transition: left 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0); /* Smooth cinematic slide */
+  z-index: 99; /* Below the navbar, but above the rest of the page */
 }
 
-/* Όταν προστίθεται η κλάση active, το μενού έρχεται στη θέση 0 (μέσα στην οθόνη) */
+/* When the active class is added, the menu comes in to the 0 position (inside the screen) */
 .fullscreen-menu.active {
   left: 0; 
 }
@@ -117,11 +117,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 3rem; /* Μεγάλο κενό ανάμεσα στα links για premium αέρα */
+  gap: 3rem; /* Big gap in betwwen the links */
 }
 
 .menu-links a {
-  font-family: 'Playfair Display', serif; /* Ίδια γραμματοσειρά με τους τίτλους */
+  font-family: 'Playfair Display', serif; /* Same as the titles */
   font-size: 2.5rem;
   color: #1a1a1a;
   text-decoration: none;
@@ -129,22 +129,22 @@
 }
 
 .menu-links a:hover {
-  color: #888888; /* Γίνεται γκρι όταν περνάει το ποντίκι */
+  color: #888888; /* Grey at hover */
 }
 
 .header-actions{
   display: flex;
-  flex-direction: row; /* Τα βάζει αναγκαστικά δίπλα-δίπλα */
-  align-items: center; /* Τα κεντράρει κάθετα ώστε να είναι στην ίδια ευθεία */
-  gap: 15px; /* Η απόσταση μεταξύ του διακόπτη και του Book */
+  flex-direction: row; /* Makes them appear side by side */
+  align-items: center; /* Centers them vertically */
+  gap: 15px; /* The distance between the toggle and the Book button */
 }
 
-/* Προσαρμογή μεγέθους για κινητά */
+/* Adjustment of size for mobile devices */
 @media (max-width: 768px) {
   .header-actions{
-    flex-direction: column; /* Τα βάζει το ένα πάνω από το άλλο */
-    align-items: center; /* Τα κεντράρει οριζόντια */
-    gap: 8px; /*μειώνουμε το κενό μεταξύ των στοιχείων για κινητά*/
+    flex-direction: column; /* Makes them appear one below the other */
+    align-items: center; /* Centers them horizontally */
+    gap: 8px; /* We reduce the gap between the items for mobile devices */
   }
   .menu-links a {
     font-size: 1.8rem;

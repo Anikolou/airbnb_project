@@ -15,10 +15,10 @@ function App() {
     <LanguageProvider>
       <Router>
         <div className="app-container">
-          {/* Το Header φαίνεται σε όλες τις σελίδες */}
+          {/* All pages have the same header */}
           <Header />
           
-        {/* Εδώ γίνεται η εναλλαγή των σελίδων */}
+        {/* Here the pages are being changed based on the route */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/attractions" element={<AttractionsPage />} />
@@ -27,7 +27,7 @@ function App() {
           <Route path="/meet-the-place" element={<MeetThePlace />} />
         </Routes>
 
-          {/* Το Footer φαίνεται σε όλες τις σελίδες */}
+          {/* ALL PAGES HAVE THE SAME FOOTER */}
           <Footer />
         </div>
       </Router>
