@@ -7,7 +7,7 @@ Built with React, powered by Vite, and fully containerized with Docker.
 Live Demo
 
 View Live Site
-![url](https://airbnb-project-xi-flax.vercel.app/)
+You can find it here for preview [vercel](https://airbnb-project-xi-flax.vercel.app/)
 
 Preview
 
