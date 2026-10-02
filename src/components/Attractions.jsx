@@ -1,6 +1,5 @@
 import React from 'react';
 import './Attractions.css';
-import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { attractionsData } from '../data/attractionsData';
 

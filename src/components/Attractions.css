@@ -70,7 +70,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Ευθυγραμμίζει τα πάντα αριστερά */
+  align-items: flex-start; /* Puts everything to the left for a clean look */
 }
 
 .meta {
@@ -101,12 +101,12 @@
 }
 
 .attraction-link {
-  display: block;          /* ΑΛΛΑΓΗ ΕΔΩ: από inline-block σε block */
+  display: block;          /* CHANGE inline-block to standard block */
   width: fit-content;
   margin-top: 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #4d4d4c; /* Το χρυσό της Ριβιέρας */
+  color: #4d4d4c; /* The gold of the Riveira */
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -115,7 +115,7 @@
 
 .attraction-link:hover {
   color: #c0a798;
-  transform: translateX(5px); /* Μικρή κίνηση προς τα δεξιά */
+  transform: translateX(5px); /* Small movement to the right */
 }
 
 /* Responsive Design */

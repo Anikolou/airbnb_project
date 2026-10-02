@@ -6,10 +6,10 @@ import { useLanguage } from '../context/LanguageContext';
 const Footer = () => {
   const { language } = useLanguage();
 
-  // Οι συντεταγμένες της τοποθεσίας
+  // Coordinats for the Google maps API marker
   const position = { lat: 37.815258, lng: 23.846234 };
 
-  // Λεξικό μεταφράσεων για όλα τα κείμενα του Footer
+  // Dictionary for the footer texts data in both languages.
   const footerTexts = {
     el: {
       contactUs: "Επικοινωνία:",

@@ -1,14 +1,15 @@
+//context API file for the import of the language context in the components that need it. It provides the current language and a function to toggle between languages.
 import React, { createContext, useState, useContext } from 'react';
 
-// Δημιουργούμε το Context
+// Create a context for the language
 const LanguageContext = createContext();
 
-// Φτιάχνουμε τον Provider που θα τυλίξει την εφαρμογή
+// Create the provider component that will wrap the app and provide the language state
 export const LanguageProvider = ({ children }) => {
-  // Ξεκινάμε με προεπιλογή τα ελληνικά ('el')
+  // Start with the default language as Greek ('el')
   const [language, setLanguage] = useState('el');
 
-  // Συνάρτηση για εύκολη εναλλαγή
+  // Function for toggling the language between greek (el) and english (en)
   const toggleLanguage = () => {
     setLanguage((prevLang) => (prevLang === 'el' ? 'en' : 'el'));
   };
@@ -20,5 +21,5 @@ export const LanguageProvider = ({ children }) => {
   );
 };
 
-// Ένα custom hook για να το καλούμε εύκολα από τα components μας
+// A custom hook for easy use in our components
 export const useLanguage = () => useContext(LanguageContext);
